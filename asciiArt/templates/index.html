@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ascii Art</title>
+	<style>
+		body {
+		    position: relative;
+		    font-family: Helvetica, Arial, sans-serif;
+		    font-size: 14px;
+		    width: 1000px;
+		    margin: 0 auto;
+		    padding: 10px;
+		    color: #333;
+			}
+		textarea {
+  			width: 300px;
+  			height: 300px;
+  			font-size: 17px;
+  			font-family: monospace;
+			}
+		h1 {
+      		font-size: 50px;
+      		/*text-align: center;*/
+      		}
+      	.title {
+      		width:300px;
+      		}
+      	.art-title{
+      		font-size: 25px;
+      		}
+      	.map{
+      		position:absolute;
+      		top:240px;
+      		right:50px;
+   			}
+      		
+	</style>
+</head>
+<body>
+	<h1>Ascii Art</h1>
+	<form method='post'>
+		<label>
+			<div>Title</div>
+			<input class = "title" type='text' name='title' value='{{title}}'>
+		</label>
+		<label>
+			<div>Art</div>
+			<textarea name='art'>{{art}}</textarea>
+		</label>
+		<div>
+			<input type='submit'>
+		</div>
+		<div>{{error}}</div>
+	</form>
+
+	<hr>
+	<br>
+	{% for art in arts %}
+		<div class="art">
+			<div class="art-title">
+				{{art.title}}
+			</div>
+			<pre class="art-body">
+				{{art.art}}
+			</pre>
+		</div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
